@@ -10,6 +10,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -46,10 +53,11 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "File.Encoding"
+    "settings.editor.selected.configurable": "File.Encoding",
+    "spring.configuration.checksum": "d164d99c46d45be6b1e7585ff7ea10e7"
   }
 }]]></component>
-  <component name="RunManager" selected="npm.serve">
+  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
     <configuration name="SpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" />
       <module name="springboot" />
@@ -82,6 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1730297366279</updated>
       <workItem from="1730297371349" duration="1087000" />
+      <workItem from="1730471686099" duration="3703000" />
     </task>
     <servers />
   </component>
