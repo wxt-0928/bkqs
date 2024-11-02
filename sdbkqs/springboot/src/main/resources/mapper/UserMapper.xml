@@ -88,6 +88,7 @@
         select * from user
         <where>
             <if test="username != null"> and username = #{username}</if>
+            <if test="name != null"> and name like concat ('%',#{name},'%')</if>
         </where>
         order by id desc
     </select>
