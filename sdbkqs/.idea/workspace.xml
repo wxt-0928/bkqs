@@ -45,7 +45,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/sdbkqs/bkqs/sdbkqs/vue/src/views/manager",
+    "last_opened_file_path": "D:/sdbkqs/bkqs/sdbkqs/vue/src/assets/imgs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -61,10 +61,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\sdbkqs\bkqs\sdbkqs\vue\src\assets\imgs" />
+      <recent name="D:\sdbkqs\bkqs\sdbkqs\vue\public" />
       <recent name="D:\sdbkqs\bkqs\sdbkqs\vue\src\views\manager" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
+  <component name="RunManager" selected="npm.serve">
     <configuration name="SpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" />
       <module name="springboot" />
@@ -100,7 +102,8 @@
       <workItem from="1730471686099" duration="3703000" />
       <workItem from="1730556080047" duration="1521000" />
       <workItem from="1730557618763" duration="3572000" />
-      <workItem from="1730561522439" duration="2606000" />
+      <workItem from="1730561522439" duration="3035000" />
+      <workItem from="1730640621542" duration="7637000" />
     </task>
     <servers />
   </component>

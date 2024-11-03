@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import ch.qos.logback.core.joran.spi.ElementSelector;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.example.common.Result;
@@ -7,6 +8,7 @@ import com.example.common.enums.ResultCodeEnum;
 import com.example.common.enums.RoleEnum;
 import com.example.entity.Account;
 import com.example.service.AdminService;
+import com.example.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -19,7 +21,8 @@ public class WebController {
 
     @Resource
     private AdminService adminService;
-
+    @Resource
+    private UserService userService;
     @GetMapping("/")
     public Result hello() {
         return Result.success("访问成功");
@@ -37,6 +40,12 @@ public class WebController {
         if (RoleEnum.ADMIN.name().equals(account.getRole())) {
             account = adminService.login(account);
         }
+        if (RoleEnum.USER.name().equals(account.getRole())) {
+            account = userService.login(account);
+        }
+       else{
+           return Result.error(ResultCodeEnum.PARAM_ERROR);
+        }
         return Result.success(account);
     }
 
@@ -49,12 +58,13 @@ public class WebController {
                 || ObjectUtil.isEmpty(account.getRole())) {
             return Result.error(ResultCodeEnum.PARAM_LOST_ERROR);
         }
-        if (RoleEnum.ADMIN.name().equals(account.getRole())) {
-            adminService.register(account);
+        if (RoleEnum.USER.name().equals(account.getRole())) {
+            userService.register(account);
+        } else {
+            return Result.error(ResultCodeEnum.PARAM_ERROR);
         }
         return Result.success();
     }
-
     /**
      * 修改密码
      */

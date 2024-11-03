@@ -73,7 +73,7 @@ export default {
     }
   },
   created() {
-    if (!this.user.id) {
+    if (!this.user.id||this.role !== 'ADMIN') {
       this.$router.push('/login')
     }
   },
