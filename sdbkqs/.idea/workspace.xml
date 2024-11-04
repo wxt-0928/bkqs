@@ -62,11 +62,12 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\sdbkqs\bkqs\sdbkqs\vue\src\assets\imgs" />
+      <recent name="D:\sdbkqs\bkqs\sdbkqs\vue\src\assets\css" />
       <recent name="D:\sdbkqs\bkqs\sdbkqs\vue\public" />
       <recent name="D:\sdbkqs\bkqs\sdbkqs\vue\src\views\manager" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.serve">
+  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
     <configuration name="SpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" />
       <module name="springboot" />
@@ -104,7 +105,7 @@
       <workItem from="1730557618763" duration="3572000" />
       <workItem from="1730561522439" duration="3035000" />
       <workItem from="1730640621542" duration="7637000" />
-      <workItem from="1730680670720" duration="3174000" />
+      <workItem from="1730680670720" duration="8290000" />
     </task>
     <servers />
   </component>
