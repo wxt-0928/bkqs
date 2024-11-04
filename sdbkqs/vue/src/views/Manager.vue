@@ -4,7 +4,7 @@
     <div class="manager-header">
       <div class="manager-header-left">
         <img src="@/assets/imgs/logo.png" />
-        <div class="title">后台管理系统</div>
+        <div class="title">师大百科全书后台管理系统</div>
       </div>
 
       <div class="manager-header-center">
@@ -73,7 +73,7 @@ export default {
     }
   },
   created() {
-    if (!this.user.id||this.role !== 'ADMIN') {
+    if (!this.user.id||this.user.role !== 'ADMIN') {
       this.$router.push('/login')
     }
   },

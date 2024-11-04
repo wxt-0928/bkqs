@@ -40,7 +40,7 @@ public class WebController {
         if (RoleEnum.ADMIN.name().equals(account.getRole())) {
             account = adminService.login(account);
         }
-        if (RoleEnum.USER.name().equals(account.getRole())) {
+        else if (RoleEnum.USER.name().equals(account.getRole())) {
             account = userService.login(account);
         }
        else{

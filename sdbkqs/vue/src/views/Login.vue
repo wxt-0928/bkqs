@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div style="width: 380px; padding: 50px 30px; background-color: white; border-radius: 5px;">
-      <div style="text-align: center; font-size: 24px; margin-bottom: 30px; color: #333">师大百科全书登录</div>
+      <div style="text-align: center; font-size: 24px; margin-bottom: 30px; color: #333">博客平台</div>
       <el-form :model="form" :rules="rules" ref="formRef">
         <el-form-item prop="username">
           <el-input size="medium" prefix-icon="el-icon-user" placeholder="请输入账号" v-model="form.username"></el-input>
@@ -78,7 +78,7 @@ export default {
     },
     login() {
       if (!this.code) {
-        this.$message.warning('请输入验证码(小写）')
+        this.$message.warning('请输入验证码')
         this.refreshCode()
         return
       }
