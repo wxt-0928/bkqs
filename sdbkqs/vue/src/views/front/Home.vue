@@ -4,20 +4,20 @@
 
         <div style="width:150px" class="card">
             <div class="category-item" :class="{'category-item-active':item.name === current }"
-            v-for="item in categoryList" :key="item.id" @click="selectCategory(item.name)">{{item.name}}</div>
+                v-for="item in categoryList" :key="item.id" @click="selectCategory(item.name)">{{item.name}}</div>
         </div>
 
         <div style="flex:1" class="card">
 
         <div style="display: flex; padding: 15px 0; border-bottom: 1px solid #ddd;margin-bottom: 10px">
             <div style="flex: 1;width: 0">
-                <div style="font-size:16px;font-weight:bold;margin-bottom: 10px">什么是国家奖学金？</div>
+                <div style="font-size:16px;font-weight:bold;margin-bottom: 10px">什么是国家助学金？</div>
                 <div class="line1" style="color: #666;margin-bottom: 10px;font-size: 13px">国家助学金由中央与地方政府共同出资设立，
                 用于资助高校家庭经济困难的本科生在校的生活费用开支。</div>
-                <div style="display: flex;padding: 15px 0; border-bottom: 1px solid #ddd">
-                    <div style="flex:1;font-size: 13px">
-                        <span style="color: #666;margin-right: 20px"><i class="el-icon-user"></i> 润玉</span>
-                        <span style="color: #666;margin-right: 20px"><i class="el-icon-view"></i> 100</span>
+                    <div style="display: flex">
+                    <div style="flex: 1; font-size: 13px">
+                        <span style="color: #666; margin-right: 20px"><i class="el-icon-user"></i>润玉</span>
+                        <span style="color: #666; margin-right: 20px"><i class="el-icon-eye"></i> 100</span>
                         <span style="color: #666"><i class="el-icon-like"></i> 69</span>
                     </div>
                     <div style="width: fit-content">
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div style="width: 100px">
-                <img style="width: 100%;border-radius:5px" src="" alt="">
+                <img style="width: 100%; border-radius: 5px" src="" alt="">
             </div>
         </div>
 
