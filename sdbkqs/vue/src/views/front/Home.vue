@@ -58,7 +58,7 @@
           </div>
           <div>
             <div v-for="item in topList" :key="item.id" style="margin: 10px 0">
-              <span style="color: orangered">{{ item.index }}</span> <span style="color: #666;margin-left: 5px">{{ item.title }}</span>
+              <span style="color: orangered">{{item.index}}</span> <span style="color: #666;margin-left: 5px">{{item.title}}</span>
             </div>
           </div>
         </div>
