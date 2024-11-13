@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #e4e6eb;
 }
 
@@ -16,7 +16,7 @@ body{
     background: #0066bc;
 }
 .front-header-left {
-    width: 240px;
+    width: 300px;
     display: flex;
     align-items: center;
     padding-left: 30px;
@@ -60,22 +60,20 @@ body{
 /* ElementUI 样式覆盖 */
 .el-menu.el-menu--horizontal {
     border: none !important;
+    height: 59px;
 }
-
-.el-menu{
+.el-menu {
     background-color: #0066bc;
 }
-
-.el-menu-item.is-active{
+.el-menu-item.is-active {
     color: #fff !important;
     background-color: #1890ff !important;
+    height: 59px !important;
 }
-
-.el-menu-item{
+.el-menu-item {
     color: #fff !important;
     border: none !important;
 }
-
-.el-menu-item:not(.is-active):hover{
-    background-color: #359dfd;
+.el-menu-item:not(.is-active):hover {
+    background-color: #59aeff !important;
 }

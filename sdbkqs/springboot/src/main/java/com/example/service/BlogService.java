@@ -13,6 +13,8 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 
 /**
@@ -82,4 +84,11 @@ public class BlogService {
         return PageInfo.of(list);
     }
 
+    public List<Blog> selectTop(){
+        List<Blog>blogList = this.selectAll(null);
+        blogList=blogList.stream().sorted((b1,b2) -> b2.getReadCount().compareTo(b1.getReadCount()))
+                .limit(10)
+                .collect(Collectors.toList());
+        return blogList;
+    }
 }
