@@ -136,7 +136,7 @@
       <workItem from="1731404060436" duration="5000" />
       <workItem from="1731408977290" duration="658000" />
       <workItem from="1731409671366" duration="22851000" />
-      <workItem from="1731508948124" duration="13289000" />
+      <workItem from="1731508948124" duration="22463000" />
     </task>
     <servers />
   </component>
@@ -153,17 +153,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/springboot/src/main/java/com/example/service/UserService.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

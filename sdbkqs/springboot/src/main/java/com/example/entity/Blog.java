@@ -21,11 +21,22 @@ public class Blog {
     private Integer userId;
     /** 发布日期 */
     private String date;
+    /** 浏览量*/
+
     private String categoryName;
     private String userName;
-    /** 浏览量 */
     private Integer readCount;
     private Integer categoryId;
+
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Integer getCategoryId() {
         return categoryId;

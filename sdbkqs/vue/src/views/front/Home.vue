@@ -20,8 +20,7 @@
                      <span style="color: #666"><i class="el-icon-like"></i> {{ item.likesCount }}</span>
                    </div>
                    <div style="width: fit-content">
-                     <el-tag type="primary" style="margin-right: 10px">后端</el-tag>
-                     <el-tag type="primary">面试</el-tag>
+                <el-tag v-for="item in JSON.parse(item.tags || '[]')" :key="item" type="primary" style="margin-right: 5px">{{item}}</el-tag>
                    </div>
                  </div>
                </div>
@@ -170,11 +169,7 @@ export default {
   color: #fff;
   border-radius: 5px;
 }
-.line1 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+
 .blog-box {
   display: flex;
   grid-gap: 15px;
