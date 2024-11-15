@@ -189,7 +189,5 @@ export default {
 .blog-title:hover{
   color: #2a60c9;
 }
-a{
-  color: #333;
-}
+
 </style>

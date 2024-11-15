@@ -19,6 +19,11 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 
+/** 问题：
+ * 1.blogdetail  操作成功不出现
+ * 2.点赞、收藏不实现
+ * 3.问题在90.91*/
+
 /**
  * 博客信息业务处理
  **/
@@ -33,6 +38,9 @@ public class BlogService {
 
     @Resource
     LikesService likesService;
+
+    @Resource
+    CollectService collectService;
 
     /**
      * 新增
@@ -79,6 +87,13 @@ public class BlogService {
         //查询当前博客的点赞数据
         int likesCount = likesService.selectByFidAndModule(id, LikesModuleEnum.BLOG.getValue());
         blog.setLikesCount(likesCount);
+        /**  这一句出现内容会消失 */
+        /**Likes userLikes = likesService.selectUserLikes(id, LikesModuleEnum.BLOG.getValue());
+        blog.setUserLike(userLikes != null);*/
+        //查询当前博客的收藏数据
+        int collectCount = collectService.selectByFidAndModule(id, LikesModuleEnum.BLOG.getValue());
+        blog.setCollectCount(collectCount);
+
         return blog;
     }
 
@@ -95,6 +110,10 @@ public class BlogService {
     public PageInfo<Blog> selectPage(Blog blog, Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<Blog> list = blogMapper.selectAll(blog);
+        for(Blog b : list){
+            int likescount = likesService.selectByFidAndModule(b.getId() , LikesModuleEnum.BLOG.getValue());
+            b.setLikesCount(likescount);
+        }
         return PageInfo.of(list);
     }
 
@@ -121,7 +140,12 @@ public class BlogService {
                 blogSet.addAll(collect);
             }
         }
-        return blogSet.stream().limit(5).collect(Collectors.toSet());
+        blogSet = blogSet.stream().limit(5).collect(Collectors.toSet());
+        blogSet.forEach(b -> {
+            int likesCount = likesService.selectByFidAndModule(b.getId(),LikesModuleEnum.BLOG.getValue());
+            b.setLikesCount(likesCount);
+        });
+        return blogSet;
     }
 
 }

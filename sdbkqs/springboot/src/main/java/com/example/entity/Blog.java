@@ -32,14 +32,36 @@ public class Blog {
 
     private User user;
 
-    private Integer likesCount;
+    private Integer collectCount;
+
+    public Integer getCollectCount() {
+        return collectCount;
+    }
+
+
+    private Boolean userLike;
+
+    public Boolean getUserLike() {
+        return userLike;
+    }
+
+    public void setUserLike(Boolean userLike) {
+        this.userLike = userLike;
+    }
+
+
+    private Integer LikesCount;
+
+    public void setCollectCount(Integer collectCount) {
+        this.collectCount = collectCount;
+    }
 
     public Integer getLikesCount() {
-        return likesCount;
+        return LikesCount;
     }
 
     public void setLikesCount(Integer likesCount) {
-        this.likesCount = likesCount;
+        LikesCount = likesCount;
     }
 
     public User getUser() {

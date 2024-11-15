@@ -18,8 +18,8 @@
         <option value="Vue Options API Component" />
         <option value="Vue Single File Component" />
         <option value="Class" />
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -78,6 +78,12 @@
       <recent name="D:\bkqs\sdbkqs\vue\src\views\manager" />
       <recent name="D:\sdbkqs\bkqs\sdbkqs\vue\src\assets\imgs" />
       <recent name="D:\sdbkqs\bkqs\sdbkqs\vue\src\assets\css" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.mapper" />
+      <recent name="com.example.service" />
+      <recent name="com.example.controller" />
+      <recent name="com.example.entity" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SpringbootApplication">
@@ -138,7 +144,7 @@
       <workItem from="1731408977290" duration="658000" />
       <workItem from="1731409671366" duration="22851000" />
       <workItem from="1731508948124" duration="22463000" />
-      <workItem from="1731647990206" duration="9847000" />
+      <workItem from="1731647990206" duration="31364000" />
     </task>
     <servers />
   </component>
@@ -159,5 +165,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/052d952e84165105545e83c48651dafadc75b4cdd396b0cb85142fb286886e14_json$SpringbootApplication.ic" NAME="SpringbootApplication Coverage Results" MODIFIED="1731674055956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

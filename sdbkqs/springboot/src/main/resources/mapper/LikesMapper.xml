@@ -6,7 +6,7 @@
 
 
     <insert id="insert">
-        insert into likes(fid,user_id,module) values (#{fid},#{userId},{#module})
+        insert into likes(fid,user_id,module) values (#{fid},#{userId},#{module})
     </insert>
 
     <delete id="deleteById">

@@ -7,6 +7,7 @@ body {
     font-size: 14px;
 }
 a {
+    color: #333;
     text-decoration: none;
 }
 .w-e-text img{
@@ -33,3 +34,4 @@ a {
     -webkit-line-clamp: 2;
     overflow: hidden;
 }
+
