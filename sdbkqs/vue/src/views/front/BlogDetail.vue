@@ -3,7 +3,7 @@
       <div style="display: flex; grid-gap: 10px">
 
         <div style="flex: 1">
-          <div class="card" style="padding: 30px">
+          <div class="card" style="padding: 30px;margin-bottom: 10px">
             <div style="font-weight: bold;font-size: 24px;margin-bottom: 20px">{{ blog.title }}</div>
             <div style="color: #666;margin-bottom:  20px">
               <span style="margin-right: 20px"><i class="el-icon-user"></i>{{blog.userName}}</span>
@@ -17,8 +17,20 @@
             <div class="w-e-text">
               <div v-html="blog.content"></div>
             </div>
+
+          </div>
+
+          <!--点赞和收藏 -->
+          <div class="card" style="text-align: center;font-size: 20px;color: #666;margin-bottom: 10px">
+            <span style="margin-right: 20px;cursor: pointer;" @click="setlikes"><i class="el-icon-like"></i>{{blog.likesCount}}</span>
+            <span style="cursor:pointer"><i class="el-icon-star-off"></i>5</span>
+          </div>
+
+          <div class="card">
+
           </div>
         </div>
+
         <div style="width: 260px">
           <div class="card" style="margin-bottom: 10px">
             <div style="display: flex;align-items:center; grid-gap: 10px;margin-bottom: 10px">
@@ -36,7 +48,7 @@
               </div>
               <div style="flex: 1;text-align: center">
                 <div style="margin-bottom: 5px">点赞</div>
-                <div style="color: #888">5</div>
+                <div style="color: #888">10</div>
               </div>
               <div style="flex: 1;text-align: center">
                 <div style="margin-bottom: 5px">收藏</div>
@@ -50,42 +62,62 @@
 
             <div>
               <div style="margin-bottom: 15px" v-for="item in recommendList":key="item.id">
-                <div style="margin-bottom: 5px">各类助学金，奖学金相关信息</div>
+                <div style="margin-bottom: 5px" class="line2">{{ item.title }}</div>
                 <div style="color: #888">
-                  <span>阅读</span> <span>15</span>
-                  <span style="margin-left: 10px">点赞</span> <span>10</span>
+                  <span>阅读</span> <span>{{item.readCount}}</span>
+                  <span style="margin-left: 10px">点赞</span> <span>{{item.likesCount}}</span>
                 </div>
               </div>
             </div>
           </div>
 
         </div>
+
+
+
       </div>
+
+      <Footer />
     </div>
 </template>
 
 <script>
+import Footer from "@/components/Footer";
 export default {
   name: "BlogDetail",
+  components: {
+    Footer
+  },
   data(){
     return{
       blogId: this.$route.query.blogId,
       blog:{},
       tagsArr:[],
-      recommendList: [
-        {title:'奖学金'}
-      ]
+      recommendList: []
     }
   },
   created() {
     this.load()
   },
   methods:{
+    setlikes(){
+      this.$request.post('/likes/set',{fid:this.blogId,module:'博客'}).then(res =>{
+        if (res.code ==='200'){
+          this.$message.success('操作成功')
+
+          this.load()  //重新加载数据
+        }
+      })
+    },
     load(){
       this.$request.get('blog/selectById/'+this.blogId).then(res =>{
         this.blog=res.data || {}
 
         this.tagsArr = JSON.parse(this.blog.tags || '[]')
+      })
+
+      this.$request.get('blog/selectRecommend/'+this.blogId).then(res =>{
+        this.recommendList=res.data || []
       })
     }
   }

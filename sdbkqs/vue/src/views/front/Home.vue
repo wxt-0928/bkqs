@@ -49,7 +49,7 @@
 
       <div style="width: 260px" >
         <div class="card" style="margin-bottom: 10px">
-          <div style="font-size: 20px;font-weight: bold;margin-bottom: 10px">欢迎您！</div>
+          <div style="font-size: 20px;font-weight: bold;margin-bottom: 10px">欢迎您！😊</div>
           <a href="/front/person"><div style="color: #666">写下博客记录美好的一天</div></a>
         </div>
 

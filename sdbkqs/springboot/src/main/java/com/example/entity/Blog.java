@@ -1,5 +1,7 @@
 package com.example.entity;
 
+import java.util.Objects;
+
 /**
  * 博客信息
  */
@@ -29,6 +31,16 @@ public class Blog {
     private Integer categoryId;
 
     private User user;
+
+    private Integer likesCount;
+
+    public Integer getLikesCount() {
+        return likesCount;
+    }
+
+    public void setLikesCount(Integer likesCount) {
+        this.likesCount = likesCount;
+    }
 
     public User getUser() {
         return user;
@@ -132,5 +144,18 @@ public class Blog {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Blog)) return false;
+        Blog blog = (Blog) o;
+        return Objects.equals(getId(),blog.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

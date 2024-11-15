@@ -1,8 +1,10 @@
 package com.example.service;
 
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONUtil;
+import com.example.common.enums.LikesModuleEnum;
 import com.example.common.enums.RoleEnum;
 import com.example.entity.*;
 import com.example.mapper.BlogMapper;
@@ -28,6 +30,9 @@ public class BlogService {
 
     @Resource
     UserService userService;
+
+    @Resource
+    LikesService likesService;
 
     /**
      * 新增
@@ -71,6 +76,9 @@ public class BlogService {
         Blog blog = blogMapper.selectById(id);
         User user = userService.selectById(blog.getUserId());
         blog.setUser(user);
+        //查询当前博客的点赞数据
+        int likesCount = likesService.selectByFidAndModule(id, LikesModuleEnum.BLOG.getValue());
+        blog.setLikesCount(likesCount);
         return blog;
     }
 
@@ -97,4 +105,23 @@ public class BlogService {
                 .collect(Collectors.toList());
         return blogList;
     }
+
+
+    public Set<Blog> selectRecommend(Integer blogId){
+        Blog blog = this.selectById(blogId);
+        String tags = blog.getTags();
+        Set<Blog> blogSet = new HashSet<>();
+        if(ObjectUtil.isNotEmpty(tags)){
+            List<Blog> blogList = this.selectAll(null);
+            JSONArray tagsArr = JSONUtil.parseArray(tags);
+            for (Object tag : tagsArr) {
+                //筛选出其他含相同标签的博客
+                Set<Blog> collect = blogList.stream().filter(b -> b.getTags().contains(tag.toString()) && !blogId.equals(b.getId()))
+                        .collect(Collectors.toSet());
+                blogSet.addAll(collect);
+            }
+        }
+        return blogSet.stream().limit(5).collect(Collectors.toSet());
+    }
+
 }
