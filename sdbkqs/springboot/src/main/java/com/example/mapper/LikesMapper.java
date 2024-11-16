@@ -2,7 +2,6 @@ package com.example.mapper;
 
 import com.example.entity.Likes;
 import org.apache.ibatis.annotations.Param;
-//import org.apache.ibatis.annotations.Param;
 
 public interface LikesMapper {
 

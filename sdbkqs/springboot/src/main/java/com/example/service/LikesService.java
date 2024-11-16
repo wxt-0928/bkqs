@@ -26,14 +26,15 @@ public class LikesService {
     }
 
     /**查询当前用户是否点过赞*/
-     public Likes selectUserLikes(Integer fid, String module){
-         Account currentUser = TokenUtils.getCurrentUser();
-         Likes likes = new Likes();
-         likes.setUserId(currentUser.getId());
-         likes.setFid(fid);
-         likes.setModule(module);
-         return likesMapper.selectUserLikes(likes);
-     }
+    public Likes selectUserLikes(Integer fid, String module){
+        Account currentUser = TokenUtils.getCurrentUser();
+        Likes likes = new Likes();
+        likes.setUserId(currentUser.getId());
+        likes.setFid(fid);
+        likes.setModule(module);
+        return likesMapper.selectUserLikes(likes);
+    }
+
 
 
     public int selectByFidAndModule(Integer fid,String module){

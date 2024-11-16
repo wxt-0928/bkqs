@@ -23,7 +23,7 @@
           <!--点赞和收藏 -->
           <div class="card" style="text-align: center;font-size: 20px;color: #666;margin-bottom: 10px">
             <span style="margin-right: 20px;cursor: pointer" @click="setLikes":class="{'active':blog.userLike}"><i class="el-icon-like"></i>{{blog.likesCount}}</span>
-            <span style="cursor:pointer" @click="setLikes":class="{'active': blog.UserCollect}"><i class="el-icon-star-off"></i>{{blog.collectCount}}</span>
+            <span style="cursor:pointer" @click="setCollect":class="{'active': blog.userCollect}"><i class="el-icon-star-off"></i>{{blog.collectCount}}</span>
           </div>
 
           <div class="card">
@@ -125,7 +125,7 @@ export default {
         this.tagsArr = JSON.parse(this.blog.tags || '[]')
       })
 
-      this.$request.get('blog/selectRecommend/'+this.blogId).then(res =>{
+      this.$request.get('/blog/selectRecommend/'+this.blogId).then(res =>{
         this.recommendList=res.data || []
       })
     }

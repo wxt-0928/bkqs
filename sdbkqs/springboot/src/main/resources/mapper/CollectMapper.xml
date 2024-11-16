@@ -6,15 +6,15 @@
 
 
     <insert id="insert">
-        insert into collect(fid,user_id,module) values (#{fid},#{userId},{#module})
+        insert into collect(fid,user_id,module) values (#{fid},#{userId},#{module})
     </insert>
 
     <delete id="deleteById">
-        delete from collect where  id = #{id}
+        delete from collect where id = #{id}
     </delete>
 
     <select id="selectUserCollect" resultType="com.example.entity.Collect">
-        select * from collect where fid = #{fid} and user_id = =#{user_id} and module = #{module}
+        select * from collect where fid = #{fid} and user_id  = #{userId} and module = #{module}
     </select>
 
     <select id="selectByFidAndModule" resultType="java.lang.Integer">

@@ -18,12 +18,6 @@ import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-
-/** 问题：
- * 1.blogdetail  操作成功不出现
- * 2.点赞、收藏不实现
- * 3.问题在90.91*/
-
 /**
  * 博客信息业务处理
  **/
@@ -87,12 +81,14 @@ public class BlogService {
         //查询当前博客的点赞数据
         int likesCount = likesService.selectByFidAndModule(id, LikesModuleEnum.BLOG.getValue());
         blog.setLikesCount(likesCount);
-        /**  这一句出现内容会消失 */
-        /**Likes userLikes = likesService.selectUserLikes(id, LikesModuleEnum.BLOG.getValue());
-        blog.setUserLike(userLikes != null);*/
+        Likes userLikes = likesService.selectUserLikes(id, LikesModuleEnum.BLOG.getValue());
+        blog.setUserLike(userLikes != null);
+
         //查询当前博客的收藏数据
         int collectCount = collectService.selectByFidAndModule(id, LikesModuleEnum.BLOG.getValue());
         blog.setCollectCount(collectCount);
+        Collect userCollect = collectService.selectUserCollect(id, LikesModuleEnum.BLOG.getValue());
+        blog.setUserCollect(userCollect != null);
 
         return blog;
     }
@@ -111,8 +107,8 @@ public class BlogService {
         PageHelper.startPage(pageNum, pageSize);
         List<Blog> list = blogMapper.selectAll(blog);
         for(Blog b : list){
-            int likescount = likesService.selectByFidAndModule(b.getId() , LikesModuleEnum.BLOG.getValue());
-            b.setLikesCount(likescount);
+            int likesCount = likesService.selectByFidAndModule(b.getId() , LikesModuleEnum.BLOG.getValue());
+            b.setLikesCount(likesCount);
         }
         return PageInfo.of(list);
     }

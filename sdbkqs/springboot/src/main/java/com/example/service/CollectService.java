@@ -1,4 +1,4 @@
-package com.example.service;
+package  com.example.service;
 
 import com.example.entity.Account;
 import com.example.entity.Collect;
@@ -12,25 +12,33 @@ import javax.annotation.Resource;
 public class CollectService {
 
     @Resource
-    CollectMapper CollectMapper;
+    CollectMapper collectMapper;
 
     public void set(Collect collect) {
         Account currentUser = TokenUtils.getCurrentUser();
         collect.setUserId(currentUser.getId());
-        Collect dblCollect = CollectMapper.selectUserCollect(collect);
+        Collect dblCollect = collectMapper.selectUserCollect(collect);
         if (dblCollect == null) {
-            CollectMapper.insert(collect);
+            collectMapper.insert(collect);
         } else {
-            CollectMapper.deleteById(dblCollect.getId());
+            collectMapper.deleteById(dblCollect.getId());
         }
     }
 
+    /**查询当前用户是否收藏过*/
+    public Collect selectUserCollect(Integer fid, String module){
+        Account currentUser = TokenUtils.getCurrentUser();
+        Collect collect = new Collect();
+        collect.setUserId(currentUser.getId());
+        collect.setFid(fid);
+        collect.setModule(module);
+        return collectMapper.selectUserCollect(collect);
+    }
 
 
 
     public int selectByFidAndModule(Integer fid,String module){
-        return CollectMapper.selectByFidAndModule(fid,module);
+        return collectMapper.selectByFidAndModule(fid,module);
     }
 
 }
-
