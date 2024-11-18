@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15347cfc-9e15-46cb-8105-4113d033b094" name="Changes" comment="Changes" />
+    <list default="true" id="15347cfc-9e15-46cb-8105-4113d033b094" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/resources/application.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,6 +149,7 @@
       <workItem from="1731508948124" duration="22463000" />
       <workItem from="1731647990206" duration="36823000" />
       <workItem from="1731724700771" duration="37000" />
+      <workItem from="1731818066903" duration="1006000" />
     </task>
     <servers />
   </component>
