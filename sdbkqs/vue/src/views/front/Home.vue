@@ -8,40 +8,8 @@
       </div>
 
       <div style="flex: 1">
-           <div class="card" style="min-height: 80vh">
-             <div class="blog-box" v-for="item in tableData" :key="item.id" v-if="total > 0">
-               <div style="flex: 1; width: 0">
-                 <a :href="'/front/blogDetail?blogId=' + item.id"target="_blank"><div class="blog-title">{{ item.title }}</div></a>
-                 <div class="line1" style="color: #666; margin-bottom: 10px; font-size: 13px">{{ item.descr}}</div>
-                 <div style="display: flex">
-                   <div style="flex: 1; font-size: 13px">
-                     <span style="color: #666; margin-right: 20px"><i class="el-icon-user"></i> {{ item.userName }}</span>
-                     <span style="color: #666; margin-right: 20px"><i class="el-icon-view"></i> {{ item.readCount }}</span>
-                     <span style="color: #666"><i class="el-icon-like"></i> {{ item.likesCount }}</span>
-                   </div>
-                   <div style="width: fit-content">
-                <el-tag v-for="item in JSON.parse(item.tags || '[]')" :key="item" type="primary" style="margin-right: 5px">{{item}}</el-tag>
-                   </div>
-                 </div>
-               </div>
-               <div style="width: 150px">
-                 <img style="width: 100%; height: 80px; border-radius: 5px" :src="item.cover" alt="">
-               </div>
-             </div>
-             <div v-if="total === 0" style="padding: 20px 0; text-align: center; font-size: 16px; color: #666">暂无数据</div>
-             <div style="margin-top: 10px" v-if="total">
-               <el-pagination
-                   background
-                   @current-change="handleCurrentChange"
-                   :current-page="pageNum"
-                   :page-sizes="[5, 10, 20]"
-                   :page-size="pageSize"
-                   layout="total, prev, pager, next"
-                   :total="total">
-               </el-pagination>
-             </div>
-           </div>
 
+        <blog-list :categoryName="current"/>
           <Footer />
 
 
@@ -59,14 +27,16 @@
             <div style="font-size: 12px;color: #666;cursor: pointer;" @click="refreshTop"><i class="el-icon-refresh"></i> 换一换</div>
           </div>
           <div>
-            <div v-for="item in showList" :key="item.id" style="margin: 15px 0"class="line1">
-              <span style="width: 18px; display: inline-block;text-align: right;margin-right: 10px">
-                <span style="color: orangered" v-if="item.index === 1">{{item.index}}</span>
-                <span style="color: goldenrod" v-else-if="item.index === 2">{{item.index}}</span>
-                <span style="color: dodgerblue" v-else-if="item.index === 3">{{item.index}}</span>
-                <span style="color: #666" v-else>{{item.index}}</span>
-              </span>
-              <span style="color: #666">{{item.title}}</span>
+            <div v-for="item in showList" :key="item.id" style="margin: 15px 0" class="line1">
+              <a :href="'/front/blogDetail?blogId=' + item.id" target="_blank">
+    <span style="width: 18px; display: inline-block; text-align: right; margin-right: 10px">
+      <span style="color: orangered" v-if="item.index === 1">{{ item.index }}</span>
+      <span style="color: goldenrod" v-else-if="item.index === 2">{{ item.index }}</span>
+      <span style="color: dodgerblue" v-else-if="item.index === 3">{{ item.index }}</span>
+      <span style="color: #666" v-else>{{ item.index }}</span>
+    </span>
+                <span style="color: #666;">{{ item.title }}</span>
+              </a>
             </div>
           </div>
         </div>
@@ -85,19 +55,17 @@
 <script>
 
 import Footer from "@/components/Footer";
-
+import BlogList  from "@/components/BlogList";
 export default {
   components: {
+    BlogList,
     Footer
   },
   data() {
     return {
       current: '全部博客',  //当前选中的分类名称
       categoryList: [],
-      tableData: [],  // 所有的数据
-      pageNum: 1,   // 当前的页码
-      pageSize: 10,  // 每页显示的个数
-      total: 0,
+
       topList: [],
       showList: [],
       lastIndex: 0
@@ -106,7 +74,7 @@ export default {
   mounted() {
     this.load()
 
-    this.loadBlogs(1)
+
 
     this.refreshTop()
 
@@ -128,7 +96,7 @@ export default {
     },
     selectCategory(categoryName) {
       this.current = categoryName
-      this.loadBlogs(1)
+
     },
     load() {
       // 请求分类的数据
@@ -137,19 +105,7 @@ export default {
         this.categoryList.unshift({ name: '全部博客' })
       })
     },
-    loadBlogs(pageNum) {
-      if (pageNum) this.pageNum = pageNum
-      this.$request.get('/blog/selectPage', {
-        params: {
-          pageNum: this.pageNum,
-          pageSize: this.pageSize,
-          categoryName: this.current === '全部博客' ? null : this.current,
-        }
-      }).then(res => {
-        this.tableData = res.data?.list
-        this.total = res.data?.total
-      })
-    },
+
     handleCurrentChange(pageNum) {
       this.load(pageNum)
     },

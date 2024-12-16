@@ -85,7 +85,19 @@ public class BlogController {
         PageInfo<Blog> page = blogService.selectPage(blog, pageNum, pageSize);
         return Result.success(page);
     }
-
+/**
+ * 分页查询当前博客
+ */
+    /**
+     * 查询用户报名的活动列表
+     */
+    @GetMapping("/selectUser")
+    public Result selectUser(Blog blog,
+                             @RequestParam(defaultValue = "1") Integer pageNum,
+                             @RequestParam(defaultValue = "10") Integer pageSize) {
+        PageInfo<Blog> page = blogService.selectUser(blog, pageNum, pageSize);
+        return Result.success(page);
+    }
     /**
      * 博客榜单
      */

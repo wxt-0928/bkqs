@@ -60,6 +60,7 @@ public class UserService {
 
     public User selectById(Integer id) {
         return userMapper.selectById(id);
+
     }
 
     public List<User> selectAll(User user) {

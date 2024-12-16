@@ -77,6 +77,19 @@ public class BlogService {
     public Blog selectById(Integer id) {
         Blog blog = blogMapper.selectById(id);
         User user = userService.selectById(blog.getUserId());
+        List<Blog> userBlogList=blogMapper.selectUserBlog(user.getId());
+        user.setBlogCount(userBlogList.size());
+        int userlikesCount=0;
+        int userCollectCount=0;
+        for (Blog b:userBlogList){
+            Integer fid=b.getId();
+            int likesCount=likesService.selectByFidAndModule(fid,LikesModuleEnum.BLOG.getValue());
+            userlikesCount += likesCount;
+            int collectCount=collectService.selectByFidAndModule(fid,LikesModuleEnum.BLOG.getValue());
+            userCollectCount += collectCount;
+        }
+       user.setLikesCount(userlikesCount);
+        user.setCollectCount(userCollectCount);
         blog.setUser(user);
         //查询当前博客的点赞数据
         int likesCount = likesService.selectByFidAndModule(id, LikesModuleEnum.BLOG.getValue());
@@ -89,7 +102,9 @@ public class BlogService {
         blog.setCollectCount(collectCount);
         Collect userCollect = collectService.selectUserCollect(id, LikesModuleEnum.BLOG.getValue());
         blog.setUserCollect(userCollect != null);
-
+        //更新博客浏览数据
+        blog.setReadCount(blog.getReadCount()+1);
+        this.updateById(blog);
         return blog;
     }
 
@@ -144,4 +159,11 @@ public class BlogService {
         return blogSet;
     }
 
+    public PageInfo<Blog> selectUser(Blog blog, Integer pageNum, Integer pageSize) {
+    Account currentUser=TokenUtils.getCurrentUser();
+    if (RoleEnum.USER.name().equals(currentUser.getRole())){
+        blog.setUserId(currentUser.getId());
+    }
+    return this.selectPage(blog,pageNum,pageSize);
+    }
 }

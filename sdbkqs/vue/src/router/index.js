@@ -25,6 +25,7 @@ const routes = [
       { path: 'user', name: 'User', meta: { name: '用户信息' }, component: () => import('../views/manager/User') },
       { path: 'category', name: 'Category', meta: { name: '博客分类' }, component: () => import('../views/manager/Category') },
       { path: 'blog', name: 'Blog', meta: { name: '博客信息' }, component: () => import('../views/manager/Blog') },
+      { path: 'comment', name: 'Comment', meta: { name: '评论信息' }, component: () => import('../views/manager/Comment') },
     ]
   },
   {
@@ -35,6 +36,8 @@ const routes = [
       { path: 'home', name: 'FHome', meta: { name: '系统首页' }, component: () => import('../views/front/Home') },
       { path: 'person', name: 'Person', meta: { name: '个人信息' }, component: () => import('../views/front/Person') },
       { path: 'blogDetail', name: 'BlogDetail', meta: { name: '博客详情' }, component: () => import('../views/front/BlogDetail') },
+      { path: 'search', name: 'Search', meta: { name: '博客搜索' }, component: () => import('../views/front/Search') },
+      { path: 'newBlog', name: 'NewBlog', meta: { name: '博客编辑' }, component: () => import('../views/front/NewBlog') },
     ]
   },
   { path: '/login', name: 'Login', meta: { name: '登录' }, component: () => import('../views/Login.vue') },

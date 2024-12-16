@@ -5,8 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15347cfc-9e15-46cb-8105-4113d033b094" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/springboot/src/main/java/com/example/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot/src/main/java/com/example/entity/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot/src/main/java/com/example/mapper/CommentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot/src/main/java/com/example/service/CommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot/src/main/resources/mapper/CommentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/components/BlogList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/components/Comment.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/components/PersonPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/front/NewBlog.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/front/Search.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue/src/views/manager/Comment.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sdbkqs.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../sdbkqs.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/example/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/example/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/example/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/example/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/example/mapper/BlogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/example/mapper/BlogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/example/mapper/LikesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/example/mapper/LikesMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/example/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/example/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/example/service/LikesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/example/service/LikesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/com/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/com/example/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/resources/mapper/BlogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/resources/mapper/BlogMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/src/main/resources/mapper/LikesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/resources/mapper/LikesMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/target/classes/com/example/controller/BlogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/com/example/controller/BlogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/target/classes/com/example/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/com/example/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/target/classes/com/example/mapper/BlogMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/com/example/mapper/BlogMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/target/classes/com/example/service/BlogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/com/example/service/BlogService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/target/classes/com/example/service/LikesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/com/example/service/LikesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/target/classes/com/example/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/com/example/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/target/classes/mapper/BlogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/mapper/BlogMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/target/classes/mapper/LikesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/mapper/LikesMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/views/Front.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/views/Front.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/views/Manager.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/views/Manager.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/views/front/BlogDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/views/front/BlogDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/views/front/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/views/front/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue/src/views/front/Person.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue/src/views/front/Person.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +53,10 @@
         <option value="FxmlFile" />
         <option value="spring-beans.schema" />
         <option value="Vue Options API Component" />
-        <option value="Vue Single File Component" />
-        <option value="Class" />
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -53,7 +87,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/软件工程/bkqs/sdbkqs/springboot/src/main/resources/mapper&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/sdbkqs/bkqs/sdbkqs/vue/src/views/manager&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -63,7 +97,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;d164d99c46d45be6b1e7585ff7ea10e7&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\IntelliJ IDEA 2024.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -76,11 +110,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\sdbkqs\bkqs\sdbkqs\vue\src\views\manager" />
       <recent name="D:\软件工程\bkqs\sdbkqs\springboot\src\main\resources\mapper" />
       <recent name="D:\软件工程\bkqs\sdbkqs\vue\src\assets\css\iconfont" />
       <recent name="D:\bkqs\sdbkqs\vue\src\views\manager" />
       <recent name="D:\sdbkqs\bkqs\sdbkqs\vue\src\assets\imgs" />
-      <recent name="D:\sdbkqs\bkqs\sdbkqs\vue\src\assets\css" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.mapper" />
@@ -150,6 +184,26 @@
       <workItem from="1731647990206" duration="36823000" />
       <workItem from="1731724700771" duration="37000" />
       <workItem from="1731818066903" duration="1006000" />
+      <workItem from="1731888196774" duration="2058000" />
+      <workItem from="1732007772750" duration="2152000" />
+      <workItem from="1732113905524" duration="138000" />
+      <workItem from="1732114151368" duration="2518000" />
+      <workItem from="1732171857533" duration="2019000" />
+      <workItem from="1732192617595" duration="1216000" />
+      <workItem from="1732493424389" duration="159000" />
+      <workItem from="1732493836200" duration="3875000" />
+      <workItem from="1733101556514" duration="1230000" />
+      <workItem from="1733702367585" duration="10757000" />
+      <workItem from="1733720109847" duration="1654000" />
+      <workItem from="1733724883389" duration="9582000" />
+      <workItem from="1733759856251" duration="123000" />
+      <workItem from="1733841577153" duration="3467000" />
+      <workItem from="1733929844501" duration="3260000" />
+      <workItem from="1733972599594" duration="6491000" />
+      <workItem from="1733984863848" duration="647000" />
+      <workItem from="1734249271773" duration="11969000" />
+      <workItem from="1734272886199" duration="1263000" />
+      <workItem from="1734274404681" duration="738000" />
     </task>
     <servers />
   </component>

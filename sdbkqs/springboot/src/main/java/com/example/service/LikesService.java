@@ -1,5 +1,6 @@
 package com.example.service;
 
+import cn.hutool.core.collection.CollUtil;
 import com.example.entity.Account;
 import com.example.entity.Likes;
 import com.example.mapper.LikesMapper;
@@ -7,6 +8,7 @@ import com.example.utils.TokenUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class LikesService {

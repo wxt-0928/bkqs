@@ -3,6 +3,8 @@ package com.example.mapper;
 import com.example.entity.Likes;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 public interface LikesMapper {
 
     void insert(Likes likes);

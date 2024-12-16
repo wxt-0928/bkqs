@@ -7,7 +7,7 @@
             <div style="font-weight: bold;font-size: 24px;margin-bottom: 20px">{{ blog.title }}</div>
             <div style="color: #666;margin-bottom:  20px">
               <span style="margin-right: 20px"><i class="el-icon-user"></i>{{blog.userName}}</span>
-              <span style="margin-right: 20px"><i class="el-icon-date"></i>{{blog.date}}</span>
+              <span style="margin-right: 20px"><i class="el-icon-time"></i>{{blog.date}}</span>
               <span style="margin-right: 20px"><i class="el-icon-view"></i>{{blog.readCount}}</span>
               <span>
                 <el-tag v-for="item in tagsArr" :key="item" type="primary" style="margin-right: 5px">{{item}}</el-tag>
@@ -17,7 +17,7 @@
             <div class="w-e-text">
               <div v-html="blog.content"></div>
             </div>
-
+        <Comment :fid="blogId"module="博客"/>
           </div>
 
           <!--点赞和收藏 -->
@@ -26,9 +26,6 @@
             <span style="cursor:pointer" @click="setCollect":class="{'active': blog.userCollect}"><i class="el-icon-star-off"></i>{{blog.collectCount}}</span>
           </div>
 
-          <div class="card">
-
-          </div>
         </div>
 
         <div style="width: 260px">
@@ -44,20 +41,20 @@
             <div style="display: flex">
               <div style="flex: 1;text-align: center">
                 <div style="margin-bottom: 5px">文章</div>
-                <div style="color: #888">10</div>
+                <div style="color: #888">{{ blog.user?.blogCount }}</div>
               </div>
               <div style="flex: 1;text-align: center">
                 <div style="margin-bottom: 5px">点赞</div>
-                <div style="color: #888">10</div>
+                <div style="color: #888">{{ blog.user?.likesCount }}</div>
               </div>
               <div style="flex: 1;text-align: center">
                 <div style="margin-bottom: 5px">收藏</div>
-                <div style="color: #888">7</div>
+                <div style="color: #888">{{ blog.user?.collectCount }}</div>
               </div>
             </div>
           </div>
 
-          <div class="card">
+          <div class="card" style="margin-bottom: 10px">
             <div style="font-weight: bold; font-size: 20px;padding-bottom: 10px;border-bottom: 1px solid #ddd;margin-bottom: 10px">相关推荐</div>
 
             <div>
@@ -83,23 +80,33 @@
 
 <script>
 import Footer from "@/components/Footer";
+
+import Comment from "@/components/Comment";
+
 export default {
+
   name: "BlogDetail",
   components: {
+    Comment,
     Footer
   },
+
   data(){
     return{
       blogId: this.$route.query.blogId,
       blog:{},
       tagsArr:[],
-      recommendList: []
+      recommendList: [],
+
+
     }
   },
   created() {
     this.load()
+
   },
   methods:{
+
     setLikes(){
       this.$request.post('/likes/set',{ fid:this.blogId,module: '博客' }).then(res =>{
         if (res.code ==='200'){
@@ -134,7 +141,29 @@ export default {
 </script>
 
 <style>
+blockquote {
+  display: block;
+  border-left: 8px solid #d0e5f2;
+  padding: 20px 10px;
+  margin: 10px 0;
+  line-height: 1.4;
+  font-size: 100%;
+  background-color: #f1f1f1;
+}
 
+/* code 样式 */
+code {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin: 0 3px;
+}
+pre code {
+  display: block;
+}
 p {
   line-height: 30px;
 }
@@ -150,4 +179,8 @@ p {
 .recommend-title:hover {
   color: #2a60c9;
 }
+.comment-active{
+  color: #2a60c9;
+}
+
 </style>
